@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dijkstra</title>
+
+    <!-- Cytoscape required links -->
+    <script src='Cytoscape_libraries/cytoscape.min.js'></script>
+    <script src="Cytoscape_libraries/cytoscape.esm.js"></script>
+    <script src="Cytoscape_libraries/cytoscape.esm.min.js"></script>
+    <script src="Cytoscape_libraries/cytoscape.umd.js"></script>
+    <script src="Cytoscape_libraries/cytoscape.cjs.js"></script>
+
+    <!-- Bootstrap link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<link rel="stylesheet" href="index.css">
+
+<body>
+    <div class="row">
+        <div class="col-sm-3 p-3 bg-black text-white" id="form">
+            <form id="src_dest">
+                <button id="again_button">Enter again: </button>
+                <div class="mb-3 mt-3">
+                    <!-- <label for="source" class="form-label">Enter source:</label>
+                    <input type="text" class="form-control form-control-sm" id="source" placeholder="Type here"
+                        name="source_name" required> -->
+                    <label for="source" class="form-label">Select source from the list:</label>
+                    <select class="form-select" id="source" name="source_name" >
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Mumbai</option>
+                        <option>Mysore</option>
+                        <option>Jaipur</option>
+                        <option>Kanpur</option>
+                        <option>Kharagpur</option>
+                        <option>Lucknow</option>
+                        <option>Bhubaneshwar</option>
+                        <option>Chennai</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <!-- <label for="destination" class="form-label">Enter destination:</label>
+                    <input type="text" class="form-control form-control-sm" id="destination" placeholder="Type here"
+                        name="destination_name" required> -->
+                    <label for="destination" class="form-label">Select destination from the list:</label>
+                    <select class="form-select" id="destination" name="destination_name">
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Mumbai</option>
+                        <option>Mysore</option>
+                        <option>Jaipur</option>
+                        <option>Kanpur</option>
+                        <option>Kharagpur</option>
+                        <option>Lucknow</option>
+                        <option>Bhubaneshwar</option>
+                        <option>Chennai</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+        <div class="col-sm-9 p-3  text-black">
+            <div id="final_distance">
+                <p >The total distance is :<p>
+                <p id="distance"></p>
+            </div>
+            <div id="cy"></div>
+        </div>
+
+    </div>
+
+    <script src="dijkstra.js"></script>
+</body>
+
+</html>
